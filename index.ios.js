@@ -10,6 +10,7 @@ import UIImage from './myUI/image'
 import UITextInput from './myUI/textInput'
 import UIScrollView from './myUI/scrollView'
 import UISwitch from './myUI/switch'
+import UIPickeriOS from './myUI/pickerios'
 import {
   AppRegistry,
   StyleSheet,
@@ -24,6 +25,7 @@ import {
   <UIScrollView horizontal={true}></UIScrollView>
   <UIText text = {'子文本测试'}></UIText>
   <UISwitch open={true}/>
+  <UIPickeriOS/>
 */
 
 export default class UICompent extends Component {
@@ -31,7 +33,8 @@ export default class UICompent extends Component {
 render() {
     return (
       <View style={styles.container}>
-        <UIText text = {'文本测试'}></UIText>    
+        <UIText text = {'文本测试'}></UIText> 
+             
       </View>
     );
   }
