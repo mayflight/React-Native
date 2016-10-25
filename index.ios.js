@@ -33,8 +33,7 @@ export default class UICompent extends Component {
 render() {
     return (
       <View style={styles.container}>
-        <UIText text = {'文本测试'}></UIText> 
-             
+        <UIText text = {'文本测试'}></UIText>    
       </View>
     );
   }
