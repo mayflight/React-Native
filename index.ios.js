@@ -11,6 +11,7 @@ import UITextInput from './myUI/textInput'
 import UIScrollView from './myUI/scrollView'
 import UISwitch from './myUI/switch'
 import UIPickeriOS from './myUI/pickerios'
+import UITouchAble from './myUI/touchable'
 import {
   AppRegistry,
   StyleSheet,
@@ -33,7 +34,8 @@ export default class UICompent extends Component {
 render() {
     return (
       <View style={styles.container}>
-        <UIText text = {'文本测试'}></UIText>    
+        <UIText text = {'文本测试'}></UIText> 
+        <UITouchAble/>   
       </View>
     );
   }
