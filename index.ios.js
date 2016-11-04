@@ -13,6 +13,7 @@ import UISwitch from './myUI/switch'
 import UIPickeriOS from './myUI/pickerios'
 import UITouchAble from './myUI/touchable'
 import UIListView from './myUI/listView'
+import UICollectionView from './myUI/collectionView'
 import {
   AppRegistry,
   StyleSheet,
@@ -28,6 +29,7 @@ import {
   <UIText text = {'子文本测试'}></UIText>
   <UISwitch open={true}/>
   <UIPickeriOS/>
+  <UIListView/>
 */
 
 export default class UICompent extends Component {
@@ -35,7 +37,7 @@ export default class UICompent extends Component {
 render() {
     return (
       <View style={styles.container}>
-        <UIListView/> 
+        <UIListView/>    
       </View>
     );
   }

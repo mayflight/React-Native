@@ -23,7 +23,7 @@ var imageurls = [
 					require('../myResource/myimage.jpg'),
 					require('../myResource/myimage.jpg'),
 					require('../myResource/myimage.jpg'),
-					require('../myResource/myimage.jpg'),
+					require('../myResource/myimage.jpg')
 				]
 export default class UIListView extends Component {
 	constructor() {
@@ -35,16 +35,16 @@ export default class UIListView extends Component {
 		}
 	}
 
-
-
 	render() {
 		return(
 			<View>
 			<Text>{this.state.text}</Text>
 				<ListView
-					showsVerticalScrollIndicator={true}
+					contentContainerStyle={styles.list}
 					dataSource={this.state.dataSource}
 					renderRow={this._myrenderRow}
+					initialListSize={5}
+					scrollRenderAheadDistance={100}
 					renderSeparator={(sectionID,rowID,adjacentRowHighlighted) => <View key={rowID+sectionID} style={{height:adjacentRowHighlighted ? 2:1 ,backgroundColor: adjacentRowHighlighted ? 'green':'red'}}/>}
 				/>				
 			</View>
@@ -77,28 +77,35 @@ export default class UIListView extends Component {
     }
 }
 const styles = StyleSheet.create({
-	row:{
+	list:{
+		justifyContent:'space-around',
 		flexDirection:'row',
-		justifyContent:'flex-start',
-		padding:10,
+		flexWrap:'wrap',
+		alignItems:'flex-start'
+	},
+	row:{
+		flexDirection:'column',
+		justifyContent:'center',
+		padding:5,
+		margin:5,
 		flex:1,
 		backgroundColor:'#f6f6f6',
-		width:Until.size.width
+		width:100,
+		height:100,
+		alignItems:'center',
+		borderRadius:50
 	},
 	image :{
-		width:80,
-		height:80
+		width:60,
+		height:60,
+		paddingTop:5
 	},
 	text:{
-		marginLeft:40,
-		paddingTop:30,
+		marginTop:2,
 		textAlign:'center',
 		fontSize:20,
 		color:'red',
 		fontWeight:'bold',
-		borderWidth:2,
-		borderColor:'green',
-		width:100,
 	}
 })
 
