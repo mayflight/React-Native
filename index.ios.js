@@ -13,6 +13,7 @@ import UISwitch from './myUI/switch'
 import UIPickeriOS from './myUI/pickerios'
 import UITouchAble from './myUI/touchable'
 import UIListView from './myUI/listView'
+import UITest from './myUI/test'
 import UICollectionView from './myUI/collectionView'
 import {
   AppRegistry,
@@ -30,6 +31,7 @@ import {
   <UISwitch open={true}/>
   <UIPickeriOS/>
   <UIListView/>
+  <UICollectionView/> 
 */
 
 export default class UICompent extends Component {
@@ -37,7 +39,7 @@ export default class UICompent extends Component {
 render() {
     return (
       <View style={styles.container}>
-        <UIListView/>    
+       <UIListView/>  
       </View>
     );
   }
