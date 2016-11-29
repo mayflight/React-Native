@@ -6,3 +6,7 @@
 4、react-native run-ios
 
 可以在index.ios.js的View里面添加代码
+
+##此次更新解决了ListView超出屏幕后无法滚动的问题
+如果ListView有父视图View，View的style都必须有个样式flex:1
+无论有几层View，必须每层View都有这个样式flex:1
