@@ -13,7 +13,6 @@ import UISwitch from './myUI/switch'
 import UIPickeriOS from './myUI/pickerios'
 import UITouchAble from './myUI/touchable'
 import UIListView from './myUI/listView'
-import UITest from './myUI/test'
 import UICollectionView from './myUI/collectionView'
 import {
   AppRegistry,
@@ -39,7 +38,7 @@ export default class UICompent extends Component {
 render() {
     return (
       <View style={styles.container}>
-       <UIListView/>  
+       <UIListView/>
       </View>
     );
   }
@@ -51,6 +50,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding:10,
     margin:10,
+    flex:1
   },
 });
 

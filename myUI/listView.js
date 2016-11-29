@@ -50,21 +50,27 @@ export default class UIListView extends Component {
 	}
 	render() {
 		return(
-			<View>
+			<View style={{flex:1}}>
 			<Text>{this.state.text}</Text>
-				<ListView
-					showsVerticalScrollIndicator={true}
-					dataSource={this.state.dataSource}
-					renderRow={this._myrenderRow.bind(this)}
-					renderScrollComponent={props => <RecyclerViewBackedScrollView {...props} />}
-					renderSeparator={(sectionID,rowID,adjacentRowHighlighted) => <View key={rowID+sectionID} style={{height:adjacentRowHighlighted ? 2:1 ,backgroundColor: adjacentRowHighlighted ? 'green':'red'}}/>}
-				/>				
+			<ListView
+				showsVerticalScrollIndicator={true}
+				dataSource={this.state.dataSource}
+				renderRow={this._myrenderRow.bind(this)}
+				onEndReachedThreshold={5}					
+				onEndReached={this._endReached.bind(this)}
+				renderScrollComponent={props => <RecyclerViewBackedScrollView {...props} />}
+				renderSeparator={(sectionID,rowID,adjacentRowHighlighted) => <View key={rowID+sectionID} style={{height:adjacentRowHighlighted ? 2:1 ,backgroundColor: adjacentRowHighlighted ? 'green':'red'}}/>}
+			/>				
 			</View>
 		)
 	}
+	_endReached() {
+		this.setState({
+			text:'滑动到底了'
+		})
+	}
 	_press(rowID){
 		titles[rowID]="点击了："+rowID
-		
 		this.setState({
 			text:titles[rowID],
 			dataSource:this.state.dataSource.cloneWithRows(titles.fill("dd",1,8))
@@ -98,7 +104,7 @@ const styles = StyleSheet.create({
 		padding:10,
 		flex:1,
 		backgroundColor:'#f6f6f6',
-		width:Until.size.width
+		width:Until.size.width,
 	},
 	image :{
 		width:80,

@@ -10,8 +10,19 @@ import {
 } from 'react-native'
 
 
-var titles = ['r1','r2','r3','r4','r5','r6','r7','r8','r9','r10','r11','r12']
+var titles = ['r1','r2','r3','r4','r5','r6','r7','r8','r9','r10','r11','r12','r2','r3','r4','r5','r6','r7','r8','r9','r10','r11','r12']
 var imageurls = [
+					require('../myResource/myimage.jpg'),
+					require('../myResource/myimage.jpg'),
+					require('../myResource/myimage.jpg'),
+					require('../myResource/myimage.jpg'),
+					require('../myResource/myimage.jpg'),
+					require('../myResource/myimage.jpg'),
+					require('../myResource/myimage.jpg'),
+					require('../myResource/myimage.jpg'),
+					require('../myResource/myimage.jpg'),
+					require('../myResource/myimage.jpg'),
+					require('../myResource/myimage.jpg'),
 					require('../myResource/myimage.jpg'),
 					require('../myResource/myimage.jpg'),
 					require('../myResource/myimage.jpg'),
@@ -37,7 +48,7 @@ export default class UIListView extends Component {
 
 	render() {
 		return(
-			<View>
+			<View style={{flex:1}}>
 			<Text>{this.state.text}</Text>
 				<ListView
 					contentContainerStyle={styles.list}
