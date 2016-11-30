@@ -1,3 +1,4 @@
+
 import React,{Component} from 'react'
 import Until from './until'
 import {
@@ -59,6 +60,7 @@ export default class UIListView extends Component {
 				onEndReachedThreshold={5}					
 				onEndReached={this._endReached.bind(this)}
 				renderScrollComponent={props => <RecyclerViewBackedScrollView {...props} />}
+				//分割线
 				renderSeparator={(sectionID,rowID,adjacentRowHighlighted) => <View key={rowID+sectionID} style={{height:adjacentRowHighlighted ? 2:1 ,backgroundColor: adjacentRowHighlighted ? 'green':'red'}}/>}
 			/>				
 			</View>
@@ -122,4 +124,3 @@ const styles = StyleSheet.create({
 		width:100,
 	}
 })
-
