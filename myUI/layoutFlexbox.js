@@ -112,7 +112,22 @@ export default class LayoutFlexBox extends Component {
 				</CircleBlock>
 				<Text>flexWrap:nowrap</Text>
 				<CircleBlock style={{flexWrap:'nowrap',height:150}}>
-					{[minCircles,minCircles,minCircles,minCircles,minCircles,minCircles]}
+					{minCircles}
+					<CircleBlock style={{width:100,flexWrap:'wrap',marginVertical:40}}>
+						{minCircles}
+					</CircleBlock>
+				</CircleBlock>
+				<CircleBlock style={{flexWrap:'wrap',height:150}}>
+					<CircleBlock style={{width:100,flexWrap:'wrap',position:'absolute',marginVertical:40}}>
+						{minCircles}
+					</CircleBlock>
+					{minCircles}
+				</CircleBlock>
+				<CircleBlock style={{flexWrap:'nowrap',height:150}}>
+					{minCircles}
+					<CircleBlock style={{width:100,flexWrap:'wrap',alignSelf:'center'}}>
+						{minCircles}
+					</CircleBlock>
 				</CircleBlock>
 			</ScrollView>
 		)
