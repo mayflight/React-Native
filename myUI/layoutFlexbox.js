@@ -71,7 +71,7 @@ export default class LayoutFlexBox extends Component {
 					{minCircles}
 				</CircleBlock>
 				<Text>flexDirection:column-reverse</Text>
-				<CircleBlock style={{flexDirection:'column-reverse',justifyContent:'center',height:300}}>
+				<CircleBlock style={{flexDirection:'column-reverse',justifyContent:'center',height:300,alignItems:'center'}}>
 					{minCircles}
 				</CircleBlock>
 				<Text>justifyContent:flex-start</Text>
@@ -97,6 +97,22 @@ export default class LayoutFlexBox extends Component {
 				<Text>alignItems: flex-start</Text>
 				<CircleBlock style={{alignItems:'flex-start',height:100}}>
 					{minCircles}
+				</CircleBlock>
+				<Text> alignItems:center</Text>
+				<CircleBlock style={{alignItems:'center',height:100}}>
+					{minCircles}
+				</CircleBlock>
+				<Text>alignItems:flex-end</Text>
+				<CircleBlock style={{alignItems:'flex-end',height:100}}>
+					{minCircles}
+				</CircleBlock>
+				<Text>flexWrap:wrap</Text>
+				<CircleBlock style={{flexWrap:'wrap',height:150}}>
+					{[minCircles,minCircles,minCircles,minCircles,minCircles,minCircles]}
+				</CircleBlock>
+				<Text>flexWrap:nowrap</Text>
+				<CircleBlock style={{flexWrap:'nowrap',height:150}}>
+					{[minCircles,minCircles,minCircles,minCircles,minCircles,minCircles]}
 				</CircleBlock>
 			</ScrollView>
 		)

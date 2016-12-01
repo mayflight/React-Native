@@ -31,7 +31,8 @@ import {
   <UISwitch open={true}/>
   <UIPickeriOS/>
   <UIListView/>
-  <UICollectionView/> 
+  <UICollectionView/>
+  <LayoutFlexBox/>
 */
 
 export default class UICompent extends Component {
