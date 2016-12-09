@@ -15,6 +15,7 @@ import UITouchAble from './myUI/touchable'
 import UIListView from './myUI/listView'
 import UICollectionView from './myUI/collectionView'
 import LayoutFlexBox from './myUI/layoutFlexbox'
+import Bridge from './myUI/bridge'
 import {
   AppRegistry,
   StyleSheet,
@@ -33,6 +34,7 @@ import {
   <UIListView/>
   <UICollectionView/>
   <LayoutFlexBox/>
+  <Bridge/>
 */
 
 export default class UICompent extends Component {
@@ -40,7 +42,7 @@ export default class UICompent extends Component {
 render() {
     return (
       <View style={styles.container}>
-       <LayoutFlexBox/>
+       <Bridge/>
       </View>
     );
   }
