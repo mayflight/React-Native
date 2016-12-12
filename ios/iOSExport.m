@@ -9,6 +9,7 @@
 #import "iOSExport.h"
 
 @implementation iOSExport
+@synthesize bridge = _bridge;
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(rnToiOS:(NSString *)name :(NSInteger)age) {
@@ -36,7 +37,17 @@ RCT_EXPORT_METHOD(rnToiOSAge:(NSInteger)age resolve:(RCTPromiseResolveBlock)reso
 
 - (void)alter:(NSString *)st {
   UIAlertController *alter = [UIAlertController alertControllerWithTitle:@"测试" message:st preferredStyle:UIAlertControllerStyleAlert];
-  [alter addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleCancel handler:nil]];
+ 
+  [alter addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+  
+  }]];
   [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alter animated:YES completion:nil];
+}
+//为js提供静态数据
+- (NSDictionary<NSString *,id> *)constantsToExport {
+  return @{@"name":@"闲",@"age":@"22"};
+}
+- (dispatch_queue_t)methodQueue {
+  return dispatch_get_main_queue();
 }
 @end

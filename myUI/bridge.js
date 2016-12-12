@@ -4,7 +4,7 @@ import {
 	Text,
 	View,
 	TouchableHighlight,
-	NativeModules
+	NativeModules,
 } from 'react-native'
 
 
@@ -13,14 +13,14 @@ export default class Bridge extends Component {
 	state = {
 		text:'请点击'
 	}
-	_nameAndAge() {
+	_nameAndAge() { //多参数的传递
 		var iOSExport = NativeModules.iOSExport
 		iOSExport.rnToiOS('帝君',200)
 		this.setState({
 			text:'rnToiOS'
 		})
 	}
-	_dic() {
+	_dic() { //字典的传递和返回值
 		var iOSExport = NativeModules.iOSExport
 		iOSExport.rnToiOSwithDic({
 			'姓名':'幽冥',
@@ -36,7 +36,7 @@ export default class Bridge extends Component {
 			text:'rnToiOSwithDic'
 		})
 	}
- 	async _promise(age) {
+ 	async _promise(age) { //Promise回调
 		try{
 			var iOSExport = NativeModules.iOSExport
 			var resolve = await iOSExport.rnToiOSAge(age)
@@ -46,6 +46,12 @@ export default class Bridge extends Component {
 		}catch(e) {
 			console.error(e);
 		}
+	}
+	_getConst() {
+		var iOSExport = NativeModules.iOSExport
+		this.setState({
+			text:iOSExport.name+','+iOSExport.age
+		})
 	}
 	render() {
 		return(
@@ -71,9 +77,17 @@ export default class Bridge extends Component {
 					style={styles.highLight} 
 					underlayColor='#5f9ea0' 
 					activeOpacity={0.8}
-					onPress={() => this._promise(20)}
+					onPress={() => this._promise(30)}
 					>
 					<Text>Promise回调</Text>
+				</TouchableHighlight>
+				<TouchableHighlight 
+					style={styles.highLight} 
+					underlayColor='#5f9ea0' 
+					activeOpacity={0.8}
+					onPress={() => this._getConst()}
+					>
+					<Text>获取iOS常量</Text>
 				</TouchableHighlight>
 			</View>
 		)
