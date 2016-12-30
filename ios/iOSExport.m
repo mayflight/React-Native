@@ -9,7 +9,8 @@
 #import "iOSExport.h"
 
 @implementation iOSExport
-@synthesize bridge = _bridge;
+
+
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(rnToiOS:(NSString *)name :(NSInteger)age) {
@@ -34,12 +35,16 @@ RCT_EXPORT_METHOD(rnToiOSAge:(NSInteger)age resolve:(RCTPromiseResolveBlock)reso
     reject(@"101",@"年龄错误",[NSError errorWithDomain:@"错误" code:1 userInfo:nil]);
   }
 }
+- (NSArray<NSString *> *)supportedEvents {
+  return @[@"sendName"];
+}
 
 - (void)alter:(NSString *)st {
   UIAlertController *alter = [UIAlertController alertControllerWithTitle:@"测试" message:st preferredStyle:UIAlertControllerStyleAlert];
  
   [alter addAction:[UIAlertAction actionWithTitle:@"了解" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-  
+    //iOS发送通知给js
+    [self sendEventWithName:@"sendName" body:@{@"name":@"江山",@"age":@"5000"}];
   }]];
   [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alter animated:YES completion:nil];
 }

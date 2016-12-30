@@ -16,21 +16,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  NSURL *jsCodeLocation;
+ NSURL *jsCodeLocation;
 
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+ jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                      moduleName:@"UICompent"
-                                               initialProperties:nil
-                                                   launchOptions:launchOptions];
-  rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
+ RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
+                                                     moduleName:@"UICompent"
+                                              initialProperties:nil
+                                                  launchOptions:launchOptions];
+ rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
 
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
-  [self.window makeKeyAndVisible];
+ self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+ UIViewController *rootViewController = [UIViewController new];
+ rootViewController.view = rootView;
+ self.window.rootViewController = rootViewController;
+ [self.window makeKeyAndVisible];
+  
+  
+  // RootViewController *controller = [[RootViewController alloc] init];
+  // UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:controller];
+  // self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  // self.window.backgroundColor = [UIColor whiteColor];
+  // self.window.rootViewController = navi;
+  // [self.window makeKeyAndVisible];
   return YES;
 }
 
