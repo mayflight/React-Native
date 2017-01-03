@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "RCTBridgeModule.h"
-@interface iOSExport : NSObject<RCTBridgeModule>
+#import "RCTEventEmitter.h"
+@interface iOSExport :RCTEventEmitter
 
 @end
