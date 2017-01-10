@@ -17,11 +17,13 @@ import UICollectionView from './myUI/collectionView'
 import LayoutFlexBox from './myUI/layoutFlexbox'
 import Bridge from './myUI/bridge'
 import UINavigator from './myUI/UINavigator'
+import UIAlert from './myUI/alter'
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  StatusBar
 } from 'react-native';
 
 
@@ -44,7 +46,8 @@ export default class UICompent extends Component {
 render() {
     return (
       <View style={styles.container}>
-       <UINavigator/>
+      <StatusBar hidden={false} networkActivityIndicatorVisible={true}/>
+       <UIAlert/>
       </View>
     );
   }
