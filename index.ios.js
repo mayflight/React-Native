@@ -18,6 +18,7 @@ import LayoutFlexBox from './myUI/layoutFlexbox'
 import Bridge from './myUI/bridge'
 import UINavigator from './myUI/UINavigator'
 import UIAlert from './myUI/alter'
+import UIFetch from './myUI/UIFetch'
 import {
   AppRegistry,
   StyleSheet,
@@ -39,6 +40,8 @@ import {
   <LayoutFlexBox/>
   <Bridge/>
   <UINavigator/>
+  <UIAlert/>
+  <UIFetch/>
 */
 
 export default class UICompent extends Component {
@@ -46,8 +49,8 @@ export default class UICompent extends Component {
 render() {
     return (
       <View style={styles.container}>
-      <StatusBar hidden={false} networkActivityIndicatorVisible={true}/>
-       <UIAlert/>
+      <StatusBar hidden={false} networkActivityIndicatorVisible={false}/>
+       <UIFetch/>
       </View>
     );
   }

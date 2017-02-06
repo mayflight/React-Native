@@ -84,7 +84,7 @@ export default class UIListView extends Component {
 				underlayColor='burlywood'
 				onPress={() => {
 					highlightRow(sectionID,rowID)
-					this._press(rowID)
+					// this._press(rowID)
 				}}
 			>	
 				<View>
